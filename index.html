@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite FF Top Up</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold:#c9a44c;
+  --soft:#f6f6f6;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:Poppins,sans-serif}
+
+body{
+  background:#f2f2f2;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.card{
+  width:100%;
+  max-width:440px;
+  background:#fff;
+  border-radius:24px;
+  padding:26px;
+  box-shadow:0 20px 40px rgba(0,0,0,.1);
+}
+
+h1{
+  text-align:center;
+  color:var(--gold);
+  letter-spacing:3px;
+  margin-bottom:6px;
+}
+
+.sub{
+  text-align:center;
+  font-size:12px;
+  color:#777;
+  margin-bottom:20px;
+}
+
+label{
+  font-size:11px;
+  color:#777;
+  letter-spacing:2px;
+  margin:16px 0 6px;
+  display:block;
+}
+
+input,select{
+  width:100%;
+  padding:14px 16px;
+  border-radius:16px;
+  border:1px solid #ddd;
+  background:var(--soft);
+  outline:none;
+}
+
+.section{
+  margin-top:20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.item{
+  position:relative;
+  background:#fff;
+  border:1px solid #e5e5e5;
+  border-radius:16px;
+  padding:14px;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.item.active{
+  border-color:var(--gold);
+  background:#fffdf7;
+}
+
+.item h4{font-size:14px;margin-bottom:4px}
+.item span{font-size:13px;color:#555}
+
+.badge{
+  position:absolute;
+  top:8px;
+  right:8px;
+  background:#ffe7b0;
+  color:#8a6a00;
+  font-size:10px;
+  padding:3px 8px;
+  border-radius:12px;
+}
+
+.pay{
+  text-align:center;
+  font-size:13px;
+  padding:14px;
+  border-radius:16px;
+  border:1px solid #ddd;
+  cursor:pointer;
+}
+
+.pay.active{
+  border-color:var(--gold);
+  background:#fffdf7;
+}
+
+button{
+  width:100%;
+  margin-top:24px;
+  padding:16px;
+  border:none;
+  border-radius:22px;
+  background:linear-gradient(135deg,#c9a44c,#b18c2e);
+  color:#fff;
+  letter-spacing:3px;
+  cursor:pointer;
+}
+
+.note{
+  margin-top:14px;
+  text-align:center;
+  font-size:11px;
+  color:#888;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>ELITE FF</h1>
+  <div class="sub">PREMIUM TOP UP SERVICE</div>
+
+  <label>PLAYER ID</label>
+  <input id="playerId" placeholder="Masukkan ID Free Fire">
+
+  <!-- PROMO -->
+  <div class="section">
+    <label>DIAMOND PROMO</label>
+    <div class="grid">
+      <div class="item" data-paket="5 Diamonds — Rp900"><div class="badge">PROMO</div><h4>5 Diamonds</h4><span>Rp900</span></div>
+      <div class="item" data-paket="10 Diamonds — Rp1.800"><div class="badge">PROMO</div><h4>10 Diamonds</h4><span>Rp1.800</span></div>
+      <div class="item" data-paket="20 Diamonds — Rp3.600"><div class="badge">PROMO</div><h4>20 Diamonds</h4><span>Rp3.600</span></div>
+      <div class="item" data-paket="50 Diamonds — Rp7.200"><div class="badge">PROMO</div><h4>50 Diamonds</h4><span>Rp7.200</span></div>
+      <div class="item" data-paket="70 Diamonds — Rp9.000"><div class="badge">PROMO</div><h4>70 Diamonds</h4><span>Rp9.000</span></div>
+      <div class="item" data-paket="140 Diamonds — Rp18.000"><div class="badge">PROMO</div><h4>140 Diamonds</h4><span>Rp18.000</span></div>
+    </div>
+  </div>
+
+  <!-- REGULER -->
+  <div class="section">
+    <label>DIAMOND REGULER</label>
+    <div class="grid">
+      <div class="item" data-paket="210 Diamonds — Rp30.000"><h4>210 Diamonds</h4><span>Rp30.000</span></div>
+      <div class="item" data-paket="280 Diamonds — Rp40.000"><h4>280 Diamonds</h4><span>Rp40.000</span></div>
+      <div class="item" data-paket="355 Diamonds — Rp50.000"><h4>355 Diamonds</h4><span>Rp50.000</span></div>
+      <div class="item" data-paket="425 Diamonds — Rp60.000"><h4>425 Diamonds</h4><span>Rp60.000</span></div>
+      <div class="item" data-paket="720 Diamonds — Rp100.000"><h4>720 Diamonds</h4><span>Rp100.000</span></div>
+      <div class="item" data-paket="860 Diamonds — Rp120.000"><h4>860 Diamonds</h4><span>Rp120.000</span></div>
+    </div>
+  </div>
+
+  <!-- PEMBAYARAN -->
+  <div class="section">
+    <label>PEMBAYARAN</label>
+    <div class="grid">
+      <div class="pay" data-pay="GoPay">GoPay</div>
+      <div class="pay" data-pay="DANA">DANA</div>
+      <div class="pay" data-pay="OVO">OVO</div>
+      <div class="pay" data-pay="QRIS">QRIS</div>
+    </div>
+  </div>
+
+  <button onclick="kirimWA()">BELI</button>
+
+  <div class="note">Harga final, tanpa biaya tambahan</div>
+</div>
+
+<script>
+let paket="", bayar="";
+
+document.querySelectorAll(".item").forEach(i=>{
+  i.onclick=()=>{
+    document.querySelectorAll(".item").forEach(x=>x.classList.remove("active"));
+    i.classList.add("active");
+    paket=i.dataset.paket;
+  }
+});
+
+document.querySelectorAll(".pay").forEach(p=>{
+  p.onclick=()=>{
+    document.querySelectorAll(".pay").forEach(x=>x.classList.remove("active"));
+    p.classList.add("active");
+    bayar=p.dataset.pay;
+  }
+});
+
+function kirimWA(){
+  let id=document.getElementById("playerId").value.trim();
+  if(!id||!paket||!bayar){
+    alert("Lengkapi data terlebih dahulu");
+    return;
+  }
+
+  let wa="628385168075"; // GANTI
+  let msg=`ELITE FF TOP UP
+
+Player ID : ${id}
+Paket : ${paket}
+Pembayaran : ${bayar}
+
+Mohon diproses.`;
+  window.open("https://wa.me/"+wa+"?text="+encodeURIComponent(msg),"_blank");
+}
+</script>
+
+</body>
+</html>
